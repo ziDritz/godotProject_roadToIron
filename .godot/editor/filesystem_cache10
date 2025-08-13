@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1755102077
+::res://::1755104024
 bloc_note.txt::TextFile/TextFile::-1::1754948683::0::1::::<><><>0<>0<><>::
 code order.txt::TextFile/TextFile::-1::1754954707::0::1::::<><><>0<>0<><>::
 ::res://_assets/::1754812236
@@ -57,7 +57,7 @@ sound_bank.gd::GDScript/GDScript::1883598031919876209::1748456775::0::1::::Sound
 sound_bank.svg::CompressedTexture2D/CompressedTexture2D::952057558578289601::1748456775::1754812234::1::::<><><>0<>0<>668f8f01be0b0e9c8cef94fb03a67dca<>res://.godot/imported/sound_bank.svg-d1b3f43714c54a9c122e6a364a95c7d8.ctex::
 sound_event_resource.gd::GDScript/GDScript::3153649699736942425::1748456775::0::1::::SoundEventResource<>Resource<><>0<>0<><>::
 sound_manager.gd::GDScript/GDScript::8759119454533660287::1748456775::0::1::::<>Node<><>0<>0<><>::
-::res://addons/resources_spreadsheet_view/::1755099562
+::res://addons/resources_spreadsheet_view/::1755104027
 editor_color_setter.gd::GDScript/GDScript::8611103232637165800::1748456775::0::1::::<>Control<><>0<>1<><>::
 editor_icon_button.gd::GDScript/GDScript::8891479471608119465::1748456775::0::1::::<>Button<><>0<>1<><>::
 editor_resource_array_picker.gd::GDScript/GDScript::1587403056756893978::1748456775::0::1::::<>EditorResourcePicker<><>0<>1<><>::
@@ -66,7 +66,7 @@ editor_view.tscn::PackedScene/PackedScene::2137121920006660410::1748456775::0::1
 LICENSE.md::TextFile/TextFile::-1::1748456775::0::1::::<><><>0<>0<><>::
 plugin.cfg::TextFile/TextFile::-1::1748456775::0::1::::<><><>0<>0<><>::
 plugin.gd::GDScript/GDScript::9063409496216445738::1748456775::0::1::::<>EditorPlugin<><>0<>1<><>::
-saved_state.json::JSON/JSON::-1::1755099562::0::1::::<><><>0<>0<><>::
+saved_state.json::JSON::-1::1755104027::0::1::::<><><>0<>0<><>::
 settings_grid.gd::GDScript/GDScript::2356332305400656222::1748456775::0::1::::<>GridContainer<><>0<>1<><>::
 settings_grid.tscn::PackedScene/PackedScene::226255947765552484::1748456775::0::1::::<><><>0<>0<><>::uid://8topi2360xak::::res://addons/resources_spreadsheet_view/settings_grid.gd
 text_editing_utils.gd::GDScript/GDScript::5598042969909826959::1748456775::0::1::::<>RefCounted<><>0<>0<><>::
@@ -151,14 +151,14 @@ signal_graph_node_item.gd::GDScript/GDScript::3082344222844490815::1748456775::0
 signal_graph_node_item.tscn::PackedScene/PackedScene::4305598501247934743::1748456775::0::1::::<><><>0<>0<><>::res://addons/SignalVisualizer/Visualizer/signal_graph_node_item.gd<>res://addons/SignalVisualizer/Visualizer/resizable_label.gd
 signal_visualizer_dock.gd::GDScript/GDScript::6514501684814978705::1748456775::0::1::::<>Control<><>0<>1<><>::
 signal_visualizer_dock.tscn::PackedScene/PackedScene::8243364601232602603::1748456775::0::1::::<><><>0<>0<><>::res://addons/SignalVisualizer/Visualizer/signal_visualizer_dock.gd<>uid://bmnff63evbdhv::::res://addons/SignalVisualizer/Clear.svg<>uid://bxj8ep08wbnm6::::res://addons/SignalVisualizer/GraphEdit.svg
-::res://characters/::1755102143
+::res://characters/::1755103061
 character.gd::GDScript/GDScript::1467382817360271044::1755085708::0::1::::Character<>Area2D<><>0<>0<><>::
 character.tscn::PackedScene/PackedScene::2504201495858663708::1755085805::0::1::::<><><>0<>0<><>::uid://u52t0gqhbbyy::::res://characters/character.gd<>uid://cyxa8sx4mier3::::res://characters/health/health.gd<>uid://cn71k7tt03o6::::res://spell_system/spell_caster.gd<>uid://lfcd1wvo4n65::::res://turn_system/turn_character.gd<>uid://c1vq0e75b7jvp::::res://characters/health_label.gd<>uid://cix54g6rnswlm::::res://characters/_assets/image_jinx.png<>uid://q42aql5wuni3::::res://characters/selection_overlay.png
 character_manager.gd::GDScript/GDScript::5873460314904060251::1755076435::0::1::::CharacterManager<>Node<><>0<>0<><>::
 character_resource.gd::GDScript/GDScript::4271663790441992785::1754996292::0::1::::CharacterResource<>Resource<><>0<>0<><>::
 health_label.gd::GDScript/GDScript::6642119612434995021::1754854907::0::1::::<>Label<><>0<>0<><>::
 selection_overlay.png::CompressedTexture2D/CompressedTexture2D::1184528670640660576::1755082219::1755082253::1::::<><><>0<>0<>7ee3ee3183d6af1de91c7acffe851d34<>res://.godot/imported/selection_overlay.png-fb1bc438cd6d134361caedb313807235.ctex::
-team.gd::GDScript::788401606843796704::1755102143::0::1::::Team<>Node<><>0<>0<><>::
+team.gd::GDScript/GDScript::788401606843796704::1755103061::0::1::::Team<>Node<><>0<>0<><>::
 ::res://characters/_assets/::1754998302
 background.txt::TextFile/TextFile::-1::1754778433::0::1::::<><><>0<>0<><>::
 image_abandon.png::CompressedTexture2D/CompressedTexture2D::8798140134386317131::1754812713::1754930517::1::::<><><>0<>0<>0e8efcd14d9ce1b4c5e331a8f49a35c3<>res://.godot/imported/image_abandon.png-0ff1b4df33de09d85b82af1e74590118.ctex::
@@ -179,14 +179,18 @@ dritz_jinx.tres::Resource/CharacterResource::7035761290942549183::1755027650::0:
 yasuo.tres::Resource/CharacterResource::5863203210396709231::1755029016::0::1::::<><><>0<>0<><>::uid://rcvdakx5ccsa::::res://characters/_assets/image_yasuo.png<>uid://b14hxcm78te54::::res://characters/character_resource.gd
 ::res://characters/health/::1755035654
 health.gd::GDScript/GDScript::6504914216526002894::1755035654::0::1::::Health<>Node<><>0<>0<><>::
-::res://characters/team_state_machine/::1755102161
-team_state_machine.gd::GDScript::6031570986388465433::1755102252::0::1::::<>Node<><>0<>0<><>::
-TeamState.gd::GDScript::8810755680812821880::1755102161::0::1::::TeamState<>Node<><>0<>0<><>::
-::res://main_states/::1755102161
+::res://characters/team_state_machine/::1755103133
+cast_spell_state.gd::GDScript/GDScript::4794845116389881307::1755102997::0::1::::CastSpellState<>TeamState<><>0<>0<><>::
+select_ally_state.gd::GDScript/GDScript::959224848239218199::1755102821::0::1::::SelectAllyState<>TeamState<><>0<>0<><>::
+select_spell_state.gd::GDScript/GDScript::7329844601646616470::1755102972::0::1::::SelectSpellState<>TeamState<><>0<>0<><>::
+select_target_spell.gd::GDScript/GDScript::7839362545736663349::1755102973::0::1::::SelectTargetState<>TeamState<><>0<>0<><>::
+team_state.gd::GDScript/GDScript::8810755680812821880::1755103028::0::1::::TeamState<>Node<><>0<>0<><>::
+team_state_machine.gd::GDScript/GDScript::6031570986388465433::1755103133::0::1::::TeamStateMachine<>Node<><>0<>0<><>::
+::res://main_states/::1755103370
 ending.gd::GDScript/GDScript::6698757760741096335::1749044317::0::1::::Ending<>Control<><>0<>0<><>::
 ending.tscn::PackedScene/PackedScene::2467374651437704974::1754308528::0::1::::<><><>0<>0<><>::uid://c2o6tdh4hooep::::res://main_states/ending.gd<>res://screen_states/ending_image.png
 game.gd::GDScript/GDScript::3565739897143967310::1754855153::0::1::::Game<>Node<><>0<>0<><>::
-game.tscn::PackedScene::2203893879242168585::1755102161::0::1::::<><><>0<>0<><>::uid://bq2jhkyb2er2e::::res://main_states/game.gd<>uid://cboysy58kbr55::::res://_assets/background_original.jpg<>uid://buyfh6jeyc3c7::::res://main_states/game_ui.gd<>uid://cq8wr4w6t03vn::::res://main_states/options_menu.tscn<>uid://bbxb3kxemg5sq::::res://characters/character.tscn<>uid://i5l8puqypxef::::res://main_states/game_ui/active_team_label.gd<>uid://dibil7mr0olyj::::res://main_states/game_ui/turn_count_label.gd<>uid://bjg4xm1s7ehcp::::res://main_states/game_over.tscn<>uid://rcvdakx5ccsa::::res://characters/_assets/image_yasuo.png<>uid://cmt6nkflprs7q::::res://main_states/scene_transition_manager.tscn<>uid://ey4i5b5r7geh::::res://spell_system/spell_factory.gd<>uid://ddnrchgvpr4ex::::res://turn_system/turn_system.gd<>uid://lh54hlb4hti3::::res://characters/team.gd<>uid://cpxfbepm1u7r0::::res://characters/character_manager.gd<>uid://bvos1h6d6ikqn::::res://_utils/placeholder.tscn
+game.tscn::PackedScene/PackedScene::2203893879242168585::1755103370::0::1::::<><><>0<>0<><>::uid://bq2jhkyb2er2e::::res://main_states/game.gd<>uid://cboysy58kbr55::::res://_assets/background_original.jpg<>uid://buyfh6jeyc3c7::::res://main_states/game_ui.gd<>uid://cq8wr4w6t03vn::::res://main_states/options_menu.tscn<>uid://bbxb3kxemg5sq::::res://characters/character.tscn<>uid://i5l8puqypxef::::res://main_states/game_ui/active_team_label.gd<>uid://dibil7mr0olyj::::res://main_states/game_ui/turn_count_label.gd<>uid://bjg4xm1s7ehcp::::res://main_states/game_over.tscn<>uid://rcvdakx5ccsa::::res://characters/_assets/image_yasuo.png<>uid://cmt6nkflprs7q::::res://main_states/scene_transition_manager.tscn<>uid://ey4i5b5r7geh::::res://spell_system/spell_factory.gd<>uid://ddnrchgvpr4ex::::res://turn_system/turn_system.gd<>uid://lh54hlb4hti3::::res://characters/team.gd<>uid://cr60dfohmwthp::::res://characters/team_state_machine/team_state_machine.gd<>uid://cpxfbepm1u7r0::::res://characters/character_manager.gd<>uid://bvos1h6d6ikqn::::res://_utils/placeholder.tscn
 game_over.gd::GDScript/GDScript::1985410957500114837::1749131242::0::1::::GameOver<>Control<><>0<>0<><>::
 game_over.tscn::PackedScene/PackedScene::3032309080315673551::1755076528::0::1::::<><><>0<>0<><>::uid://3j0oth0qhmj2::::res://main_states/game_over.gd
 game_ui.gd::GDScript/GDScript::3840060350413368996::1754955181::0::1::::GameUI<>CanvasLayer<><>0<>0<><>::

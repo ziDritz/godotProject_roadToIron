@@ -1,9 +1,2 @@
 res://main_states/game.tscn
-res://characters/team.gd
-res://characters/team_state_machine/TeamState.gd
-res://characters/team_state_machine/team_state_machine.gd
-res://characters/team_state_machine/team_state.gd
-res://characters/team_state_machine/select_ally_state.gd
-res://characters/team_state_machine/select_spell_state.gd
-res://characters/team_state_machine/select_target_spell.gd
-res://characters/team_state_machine/cast_spell_state.gd
+res://characters/team_state_machine/idle_state.gd
