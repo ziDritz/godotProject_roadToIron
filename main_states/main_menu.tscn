@@ -1,0 +1,194 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhfial3swgy08"]
+
+[ext_resource type="Script" uid="uid://btrv24l6ptjc4" path="res://main_states/main_menu.gd" id="1_5ms5j"]
+[ext_resource type="PackedScene" uid="uid://cq8wr4w6t03vn" path="res://main_states/options_menu.tscn" id="5_6spx1"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+script = ExtResource("1_5ms5j")
+
+[node name="OptionsMenu" parent="." instance=ExtResource("5_6spx1")]
+visible = false
+layout_mode = 1
+
+[node name="ButtonVBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -419.0
+offset_top = -232.0
+offset_right = 419.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ButtonVBoxContainer"]
+layout_mode = 2
+
+[node name="StartGameButton" type="Button" parent="ButtonVBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+text = "Start Game"
+
+[node name="OptionsButton" type="Button" parent="ButtonVBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+text = "Options"
+
+[node name="ExitButton" type="Button" parent="ButtonVBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+text = "Exit"
+
+[node name="CheckButton" type="CheckButton" parent="ButtonVBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 15
+action_mode = 0
+text = "Epic - Sparkles"
+
+[node name="CreditVBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.955
+anchor_right = 0.558
+anchor_bottom = 0.97
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="Label4" type="Label" parent="CreditVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Musics:"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditVBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Main Menu by atefvinc on [url=https://www.thehalvening.com/]thehalvening.com[/url]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CreditVBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "level 1 by [url=https://pixabay.com/music/video-games-game-music-7408/]DeepMusicEveryDay[/url] on pixabay.com"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="CreditVBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "level 2 by [url=https://pixabay.com/music/video-games-spaceship-arcade-shooter-game-background-soundtrack-318508/]serhii_kliets[/url] on pixabay.com"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="CreditVBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "level 3 by [url=https://pixabay.com/fr/music/jeux-video-short-8-bit-background-music-for-video-mobile-game-old-school-37sec-164704/]White_Records[/url] on pixabay.com"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="CreditVBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "BOSS by [url=https://davidkbd.itch.io/eternity-metal-scfi-music-pack]DavidKBD[/url] on itch.io"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="CreditVBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "ending by eugeniale"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="CreditVBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.97
+anchor_top = 0.97
+anchor_right = 0.97
+anchor_bottom = 0.97
+offset_left = -769.0
+offset_top = -145.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label4" type="Label" parent="CreditVBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = ":Dev"
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditVBoxContainer2"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[url=https://zidritz.itch.io]ziDritz[/url]"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+
+[node name="Label5" type="Label" parent="CreditVBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = ":Logo"
+horizontal_alignment = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CreditVBoxContainer2"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Font Generator by [url=https://www.textstudio.com]textstudio.com[/url]"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+
+[node name="Label6" type="Label" parent="CreditVBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = ":Voices"
+horizontal_alignment = 2
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="CreditVBoxContainer2"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Eugeniale & Zidritz"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+
+[connection signal="pressed" from="ButtonVBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="ButtonVBoxContainer/OptionsButton" to="." method="_on_button_options_pressed"]
+[connection signal="pressed" from="ButtonVBoxContainer/ExitButton" to="." method="_on_button_exit_pressed"]
+[connection signal="toggled" from="ButtonVBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="meta_clicked" from="CreditVBoxContainer/RichTextLabel" to="CreditVBoxContainer/RichTextLabel" method="_on_meta_clicked"]
+[connection signal="meta_clicked" from="CreditVBoxContainer/RichTextLabel2" to="CreditVBoxContainer/RichTextLabel2" method="_on_meta_clicked"]
+[connection signal="meta_clicked" from="CreditVBoxContainer/RichTextLabel3" to="CreditVBoxContainer/RichTextLabel3" method="_on_meta_clicked"]
+[connection signal="meta_clicked" from="CreditVBoxContainer/RichTextLabel4" to="CreditVBoxContainer/RichTextLabel4" method="_on_meta_clicked"]
+[connection signal="meta_clicked" from="CreditVBoxContainer/RichTextLabel5" to="CreditVBoxContainer/RichTextLabel5" method="_on_meta_clicked"]
+[connection signal="meta_clicked" from="CreditVBoxContainer/RichTextLabel6" to="CreditVBoxContainer/RichTextLabel6" method="_on_meta_clicked"]
+[connection signal="meta_clicked" from="CreditVBoxContainer2/RichTextLabel" to="CreditVBoxContainer2/RichTextLabel" method="_on_meta_clicked"]
+[connection signal="meta_clicked" from="CreditVBoxContainer2/RichTextLabel2" to="CreditVBoxContainer2/RichTextLabel2" method="_on_meta_clicked"]
+[connection signal="meta_clicked" from="CreditVBoxContainer2/RichTextLabel3" to="CreditVBoxContainer2/RichTextLabel3" method="_on_meta_clicked"]

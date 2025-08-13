@@ -1,0 +1,18 @@
+tool
+class_name
+extends
+# docstring
+
+signals event_triggered
+Enums
+CONSTANTS
+@exported variables
+public variables
+_private variables
+@onready variables
+
+_optional built-in virtual _init method
+_built-in virtual _ready method
+_remaining built-in virtual methods
+public methods
+_private methods

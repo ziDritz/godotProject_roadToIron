@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://bbxb3kxemg5sq"]
+
+[ext_resource type="Script" uid="uid://u52t0gqhbbyy" path="res://characters/character.gd" id="1_54qew"]
+[ext_resource type="Script" uid="uid://cyxa8sx4mier3" path="res://characters/health/health.gd" id="2_qqr4u"]
+[ext_resource type="Script" uid="uid://cn71k7tt03o6" path="res://spell_system/spell_caster.gd" id="3_3fwhk"]
+[ext_resource type="Script" uid="uid://lfcd1wvo4n65" path="res://turn_system/turn_character.gd" id="4_mdkfl"]
+[ext_resource type="Script" uid="uid://c1vq0e75b7jvp" path="res://characters/health_label.gd" id="5_c3ev6"]
+[ext_resource type="Texture2D" uid="uid://cix54g6rnswlm" path="res://characters/_assets/image_jinx.png" id="5_ke030"]
+[ext_resource type="Texture2D" uid="uid://q42aql5wuni3" path="res://characters/selection_overlay.png" id="7_jfi6v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdkfl"]
+size = Vector2(308, 560)
+
+[node name="Character" type="Area2D"]
+script = ExtResource("1_54qew")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("2_qqr4u")
+metadata/_custom_type_script = "uid://cyxa8sx4mier3"
+
+[node name="SpellCaster" type="Node" parent="."]
+script = ExtResource("3_3fwhk")
+metadata/_custom_type_script = "uid://cn71k7tt03o6"
+
+[node name="TurnCharacter" type="Node" parent="."]
+script = ExtResource("4_mdkfl")
+metadata/_custom_type_script = "uid://lfcd1wvo4n65"
+
+[node name="HealthLabel" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -228.0
+offset_top = -275.0
+offset_right = -167.0
+offset_bottom = -233.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "life: "
+horizontal_alignment = 2
+script = ExtResource("5_c3ev6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("5_ke030")
+
+[node name="SelectionOverlay" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("7_jfi6v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_mdkfl")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="health_changed" from="Health" to="HealthLabel" method="_on_health_changed"]

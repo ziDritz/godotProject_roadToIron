@@ -1,0 +1,214 @@
+[gd_scene load_steps=18 format=3 uid="uid://6nt2subaon3n"]
+
+[ext_resource type="Script" uid="uid://bq2jhkyb2er2e" path="res://main_states/game.gd" id="1_2fdfw"]
+[ext_resource type="Texture2D" uid="uid://cboysy58kbr55" path="res://_assets/background_original.jpg" id="2_skngy"]
+[ext_resource type="Script" uid="uid://buyfh6jeyc3c7" path="res://main_states/game_ui.gd" id="2_tsthi"]
+[ext_resource type="PackedScene" uid="uid://cq8wr4w6t03vn" path="res://main_states/options_menu.tscn" id="3_0nr28"]
+[ext_resource type="PackedScene" uid="uid://bbxb3kxemg5sq" path="res://characters/character.tscn" id="3_bfjrb"]
+[ext_resource type="Script" uid="uid://i5l8puqypxef" path="res://main_states/game_ui/active_team_label.gd" id="3_xqmnu"]
+[ext_resource type="Script" uid="uid://dibil7mr0olyj" path="res://main_states/game_ui/turn_count_label.gd" id="4_st0r4"]
+[ext_resource type="PackedScene" uid="uid://bjg4xm1s7ehcp" path="res://main_states/game_over.tscn" id="4_xqmnu"]
+[ext_resource type="Texture2D" uid="uid://rcvdakx5ccsa" path="res://characters/_assets/image_yasuo.png" id="5_tsthi"]
+[ext_resource type="PackedScene" uid="uid://cmt6nkflprs7q" path="res://main_states/scene_transition_manager.tscn" id="5_yigvy"]
+[ext_resource type="Script" uid="uid://ey4i5b5r7geh" path="res://spell_system/spell_factory.gd" id="8_0nr28"]
+[ext_resource type="Script" uid="uid://ddnrchgvpr4ex" path="res://turn_system/turn_system.gd" id="9_xqmnu"]
+[ext_resource type="Script" uid="uid://lh54hlb4hti3" path="res://characters/team.gd" id="10_bfjrb"]
+[ext_resource type="Script" uid="uid://cr60dfohmwthp" path="res://characters/team_state_machine/team_state_machine.gd" id="14_tdv8d"]
+[ext_resource type="Script" uid="uid://cpxfbepm1u7r0" path="res://characters/character_manager.gd" id="15_st0r4"]
+[ext_resource type="PackedScene" uid="uid://bvos1h6d6ikqn" path="res://_utils/placeholder.tscn" id="16_tdv8d"]
+
+[sub_resource type="GDScript" id="GDScript_phq4f"]
+script/source = "class_name SceneSwitcher
+extends CanvasLayer
+
+signal animation_finished
+
+@onready var animation_player: AnimationPlayer = $AnimationPlayer 
+@onready var main: Node = $\"..\"
+
+
+func _ready() -> void:
+	visible = false 
+	#Sinon, le layer est au dessus de tout et impossible 
+	#d'intéragir avec les controle nodes d'autres states 
+	#(ex, Buttons du Main Menu) 
+
+
+func play_transition(transition_name: String):
+
+	#visible = true
+	animation_player.play(transition_name)
+	await animation_player.animation_finished
+	animation_finished.emit()
+	await get_tree().process_frame # Cette ligne elle permet de pas avoir une frame dégeu entre deux animations
+	$ColorRect.color.a = 0 # Reset ColorRect 
+	#visible = false
+	# J'ai enlevé les switch de visible 
+	# et j'ai passé le mouse filter de color rect en ignore
+	# J'ai pas trop compris mais en gros godot galère
+	# quand on appelle deux animations à la suite et qu'on toggle 
+	# la visibilité (en plus il y avait des signaux pour compliquer les choses
+"
+
+[node name="Game" type="Node"]
+script = ExtResource("1_2fdfw")
+
+[node name="GameUI" type="CanvasLayer" parent="."]
+script = ExtResource("2_tsthi")
+
+[node name="PauseMenu" parent="GameUI" instance=ExtResource("3_0nr28")]
+visible = false
+
+[node name="GameOver" parent="GameUI" instance=ExtResource("4_xqmnu")]
+visible = false
+
+[node name="PanelContainer" type="PanelContainer" parent="GameUI"]
+anchors_preset = -1
+anchor_top = 0.8
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="GameUI/PanelContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameUI/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameUI/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="SpellButton" type="Button" parent="GameUI/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 75
+text = "Spell"
+
+[node name="SpellButton2" type="Button" parent="GameUI/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 75
+text = "Spell"
+
+[node name="EndTurnButton" type="Button" parent="GameUI/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 75
+text = "End turn"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameUI"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 210.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+
+[node name="ActiveTeamLabel" type="Label" parent="GameUI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 75
+script = ExtResource("3_xqmnu")
+
+[node name="TurnCountLabel" type="Label" parent="GameUI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 75
+script = ExtResource("4_st0r4")
+
+[node name="SceneTransitionManager" parent="." instance=ExtResource("5_yigvy")]
+layer = 2
+visible = false
+script = SubResource("GDScript_phq4f")
+
+[node name="ColorRect" parent="SceneTransitionManager" index="0"]
+y_sort_enabled = true
+
+[node name="SpellFactory" type="Node" parent="."]
+script = ExtResource("8_0nr28")
+metadata/_custom_type_script = "uid://ey4i5b5r7geh"
+
+[node name="TurnSystem" type="Node" parent="." node_paths=PackedStringArray("team_turn_order")]
+script = ExtResource("9_xqmnu")
+team_turn_order = [NodePath("../CharacterManager/CharacterTeamAllies"), NodePath("../CharacterManager/CharacterTeamEnnemies")]
+metadata/_custom_type_script = "uid://ddnrchgvpr4ex"
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.715
+offset_top = -226.0
+offset_bottom = 81.8
+texture = ExtResource("2_skngy")
+stretch_mode = 2
+
+[node name="CharacterManager" type="Node" parent="." node_paths=PackedStringArray("teams")]
+script = ExtResource("15_st0r4")
+teams = [NodePath("CharacterTeamAllies"), NodePath("CharacterTeamEnnemies")]
+
+[node name="CharacterTeamAllies" type="Node" parent="CharacterManager" node_paths=PackedStringArray("placeholders")]
+script = ExtResource("10_bfjrb")
+placeholders = [NodePath("PlaceholderAlly1"), NodePath("PlaceholderAlly2"), NodePath("PlaceholderAlly3")]
+character_ids = Array[String](["La Jinx de Dritz", "Le Bard de Darobase", "Darius"])
+metadata/_custom_type_script = "uid://lh54hlb4hti3"
+
+[node name="PlaceholderAlly1" parent="CharacterManager/CharacterTeamAllies" instance=ExtResource("16_tdv8d")]
+position = Vector2(665, 400)
+
+[node name="PlaceholderAlly2" parent="CharacterManager/CharacterTeamAllies" instance=ExtResource("16_tdv8d")]
+position = Vector2(400, 450)
+
+[node name="PlaceholderAlly3" parent="CharacterManager/CharacterTeamAllies" instance=ExtResource("16_tdv8d")]
+position = Vector2(200, 500)
+
+[node name="TeamStateMachine" type="Node" parent="CharacterManager/CharacterTeamAllies"]
+script = ExtResource("14_tdv8d")
+metadata/_custom_type_script = "uid://cr60dfohmwthp"
+
+[node name="CharacterTeamEnnemies" type="Node" parent="CharacterManager"]
+script = ExtResource("10_bfjrb")
+metadata/_custom_type_script = "uid://lh54hlb4hti3"
+
+[node name="Character2" parent="CharacterManager/CharacterTeamEnnemies" instance=ExtResource("3_bfjrb")]
+position = Vector2(1346, 461)
+
+[node name="Health" parent="CharacterManager/CharacterTeamEnnemies/Character2" index="0"]
+max_health = 30
+
+[node name="SpellCaster" parent="CharacterManager/CharacterTeamEnnemies/Character2" index="1" node_paths=PackedStringArray("spell_factory")]
+spell_factory = NodePath("../../../../SpellFactory")
+
+[node name="Sprite2D" parent="CharacterManager/CharacterTeamEnnemies/Character2" index="4"]
+texture = ExtResource("5_tsthi")
+
+[connection signal="end_turn_requested" from="GameUI" to="TurnSystem" method="_on_game_ui_end_turn_requested"]
+[connection signal="main_menu_requested" from="GameUI" to="." method="_on_game_ui_main_menu_requested"]
+[connection signal="retry_requested" from="GameUI" to="." method="_on_game_ui_retry_requested"]
+[connection signal="spell_button_2_pressed" from="GameUI" to="CharacterManager/CharacterTeamAllies" method="_on_game_ui_spell_button_2_pressed"]
+[connection signal="spell_button_2_pressed" from="GameUI" to="CharacterManager/CharacterTeamEnnemies" method="_on_game_ui_spell_button_2_pressed"]
+[connection signal="spell_button_pressed" from="GameUI" to="CharacterManager/CharacterTeamAllies" method="_on_game_ui_spell_button_pressed"]
+[connection signal="main_menu_button_pressed" from="GameUI/GameOver" to="GameUI" method="_on_game_over_main_menu_button_pressed"]
+[connection signal="retry_button_pressed" from="GameUI/GameOver" to="GameUI" method="_on_game_over_retry_button_pressed"]
+[connection signal="pressed" from="GameUI/PanelContainer/HBoxContainer/VBoxContainer/SpellButton" to="GameUI" method="_on_spell_button_pressed"]
+[connection signal="pressed" from="GameUI/PanelContainer/HBoxContainer/VBoxContainer/SpellButton2" to="GameUI" method="_on_spell_button_2_pressed"]
+[connection signal="pressed" from="GameUI/PanelContainer/HBoxContainer/EndTurnButton" to="TurnSystem" method="_on_end_turn_button_pressed"]
+[connection signal="on_turn_end" from="TurnSystem" to="CharacterManager/CharacterTeamAllies" method="_on_turn_system_on_turn_end"]
+[connection signal="on_turn_end" from="TurnSystem" to="CharacterManager/CharacterTeamEnnemies" method="_on_turn_system_on_turn_end"]
+[connection signal="on_turn_start" from="TurnSystem" to="GameUI" method="_on_turn_system_on_turn_start"]
+[connection signal="character_clicked" from="CharacterManager" to="CharacterManager/CharacterTeamAllies" method="_on_character_manager_character_clicked"]
+[connection signal="character_clicked" from="CharacterManager" to="CharacterManager/CharacterTeamEnnemies" method="_on_character_manager_character_clicked"]
+[connection signal="ally_character_selected" from="CharacterManager/CharacterTeamAllies" to="GameUI" method="_on_character_team_allies_ally_character_selected"]
+[connection signal="clicked" from="CharacterManager/CharacterTeamEnnemies/Character2" to="CharacterManager" method="_on_character_clicked"]
+[connection signal="died" from="CharacterManager/CharacterTeamEnnemies/Character2/Health" to="CharacterManager/CharacterTeamEnnemies/Character2" method="_on_health_died"]
+
+[editable path="SceneTransitionManager"]
+[editable path="CharacterManager/CharacterTeamEnnemies/Character2"]

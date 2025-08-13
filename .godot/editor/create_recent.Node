@@ -1,0 +1,15 @@
+TeamStateMachine
+Sprite2D
+WorldEnvironment
+CharacterManager
+PointLight2D
+VBoxContainer
+Node
+Label
+CanvasLayer
+CollisionShape2D
+Area2D
+TextureRect
+CenterContainer
+Button
+HBoxContainer

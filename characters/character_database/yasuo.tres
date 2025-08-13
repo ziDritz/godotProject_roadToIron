@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=3 format=3 uid="uid://cpsgdn5incloh"]
+
+[ext_resource type="Texture2D" uid="uid://rcvdakx5ccsa" path="res://characters/_assets/image_yasuo.png" id="1_5kmv7"]
+[ext_resource type="Script" uid="uid://b14hxcm78te54" path="res://characters/character_resource.gd" id="2_5kmv7"]
+
+[resource]
+script = ExtResource("2_5kmv7")
+name = "Yasuo"
+health_max = 75
+spell_book = Array[String](["Devient invicible grâce à du vent", "Dash dash dash dash..."])
+image = ExtResource("1_5kmv7")
+metadata/_custom_type_script = "uid://b14hxcm78te54"

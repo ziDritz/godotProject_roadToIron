@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://oeacrom4p5b0"]
+
+[ext_resource type="Script" uid="uid://cgprgatxwdo7b" path="res://_test/test.gd" id="1_8a8pi"]
+[ext_resource type="PackedScene" uid="uid://dqks83s787sgm" path="res://game_objects/units/scenes/Player.tscn" id="2_gomqg"]
+
+[node name="Test" type="Node"]
+script = ExtResource("1_8a8pi")
+
+[node name="Player" parent="." instance=ExtResource("2_gomqg")]
+position = Vector2(707, 352)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 20
+
+[connection signal="shot" from="Player" to="." method="_on_player_shot"]
+
+[editable path="Player"]

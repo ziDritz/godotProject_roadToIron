@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=3 format=3 uid="uid://df4hp66ito4ia"]
+
+[ext_resource type="Texture2D" uid="uid://dyy753mkbgxjh" path="res://characters/_assets/image_darius.png" id="1_e3vsw"]
+[ext_resource type="Script" uid="uid://b14hxcm78te54" path="res://characters/character_resource.gd" id="2_e3vsw"]
+
+[resource]
+script = ExtResource("2_e3vsw")
+name = "Darius"
+health_max = 100
+spell_book = Array[String](["Bleed jusqu'à la mort", "Fait flipper"])
+image = ExtResource("1_e3vsw")
+metadata/_custom_type_script = "uid://b14hxcm78te54"

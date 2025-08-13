@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=3 format=3 uid="uid://c7if7wmpd4gi6"]
+
+[ext_resource type="Texture2D" uid="uid://cix54g6rnswlm" path="res://characters/_assets/image_jinx.png" id="1_4k6qg"]
+[ext_resource type="Script" uid="uid://b14hxcm78te54" path="res://characters/character_resource.gd" id="2_4k6qg"]
+
+[resource]
+script = ExtResource("2_4k6qg")
+name = "La Jinx de Dritz"
+health_max = 100
+spell_book = Array[String](["RAK BIBIBIBIBIM", "Ca touche ?"])
+image = ExtResource("1_4k6qg")
+metadata/_custom_type_script = "uid://b14hxcm78te54"
